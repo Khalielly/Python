@@ -31,10 +31,8 @@ minas_gerais.add_cidade(cidade_minas)
 minas_gerais.add_cidade(cidade_minas2)
 minas_gerais.add_cidade(cidade_minas3)
 
-print("------------------------------------------------------------------------------------------------------------")
-print(f'O estado {goias.nome} - {goias.sigla} tem uma população total de: {goias.populacao_total()} habitantes')
-print("------------------------------------------------------------------------------------------------------------")
-print(f'O estado {santa_catarina.nome} - {santa_catarina.sigla} tem uma população total de: {santa_catarina.populacao_total()} habitantes')
-print("------------------------------------------------------------------------------------------------------------")
-print(f'O estado {minas_gerais.nome} - {minas_gerais.sigla} tem uma população total de: {minas_gerais.populacao_total()} habitantes')
-print("------------------------------------------------------------------------------------------------------------")
+for estado in [goias, santa_catarina, minas_gerais]:
+    print(f"\nCidades do {estado.nome}:")
+    for cidade in estado.cidades:
+        print(f" - {cidade.nome}: População {cidade.populacao}")
+    print(f"População total das 3 cidades de {estado.nome}: {estado.populacao_total()} habitantes\n")
